@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-gold-400: #FFCA28;
+        --color-gold-500: #FFC107;
+        --color-gold-600: #EAB308;
+        --color-silver-300: #D1D5DB;
+        --color-silver-400: #9CA3AF;
+    }
+    
+    html {
+        background-color: #000000 !important;
+    }
+    
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #000000 !important;
+        color: #f3f4f6;
+        line-height: 1.6;
+        min-height: 100vh;
+    }
+    
+    body, html, #app {
+        background-color: #000000 !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+    }
+}
+
+@layer components {
+    /* Botones elegantes */
+    .elegant-button {
+        @apply bg-gradient-to-r from-gold-600 to-gold-400 text-black font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+    }
+    
+    .elegant-button-outline {
+        @apply border-2 border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-black font-semibold py-2 px-6 rounded-full transition-all duration-300;
+    }
+    
+    .elegant-button-silver {
+        @apply bg-gradient-to-r from-silver-300 to-silver-100 text-gray-800 font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+    }
+    
+    /* Cards elegantes */
+    .elegant-card {
+        @apply bg-gray-900 border border-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-gold-500/20 transition-all duration-300 hover:border-gold-500/30;
+    }
+    
+    .elegant-product-card {
+        @apply bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-gold-500/30 transition-all duration-300 hover:shadow-gold-500/10;
+    }
+    
+    /* Header elegante */
+    .elegant-header {
+        @apply bg-black/95 backdrop-blur-sm border-b border-gray-800;
+    }
+    
+    /* Nav links elegantes */
+    .elegant-nav-link {
+        @apply relative font-medium tracking-wide;
+    }
+    
+    .elegant-nav-link::after {
+        @apply content-[''] absolute w-0 h-0.5 bg-gold-500 left-0 -bottom-1 transition-all duration-300;
+    }
+    
+    .elegant-nav-link:hover::after {
+        @apply w-full;
+    }
+    
+    /* Footer elegante */
+    .elegant-footer {
+        @apply bg-gray-900 border-t border-gray-800;
+    }
+    
+    /* Efectos de estadio */
+    .stadium-lights {
+        @apply relative;
+    }
+    
+    .stadium-lights::before {
+        content: '';
+        @apply absolute top-0 left-0 right-0 h-1;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            #FFD700 25%, 
+            #00FF88 50%, 
+            #E53E3E 75%, 
+            transparent 100%);
+        animation: stadiumLights 3s ease-in-out infinite;
+    }
+    
+    .glow-effect {
+        @apply shadow-lg;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    
+    .glow-effect:hover {
+        @apply shadow-xl;
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    }
+    
+    /* Filtros de la tienda */
+    .filter-section {
+        @apply bg-gray-900/50 backdrop-blur-sm rounded-xl border border-lunaticos-gold/20 p-6;
+    }
+    
+    /* Inputs personalizados */
+    .custom-input {
+        @apply bg-gray-900 border border-gray-700 text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:border-lunaticos-gold focus:ring-2 focus:ring-lunaticos-gold/20 transition-all duration-300;
+    }
+    
+    .custom-select {
+        @apply bg-gray-900 border border-gray-700 text-white rounded-lg px-4 py-3 focus:border-lunaticos-gold focus:ring-2 focus:ring-lunaticos-gold/20 transition-all duration-300;
+    }
+    
+    /* Badge de precio */
+    .price-badge {
+        @apply bg-lunaticos-green text-black font-bold px-3 py-1 rounded-full text-sm;
+    }
+    
+    .discount-badge {
+        @apply bg-lunaticos-red text-white font-bold px-3 py-1 rounded-full text-sm;
+    }
+    
+    /* Productos grid */
+    .products-grid {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+    }
+}
+
+@layer utilities {
+    .text-gradient {
+        background: linear-gradient(135deg, #FFD700, #00FF88, #E53E3E);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .bg-stadium {
+        background: linear-gradient(135deg, 
+            rgba(0, 0, 0, 0.9) 0%, 
+            rgba(30, 30, 30, 0.8) 25%,
+            rgba(0, 0, 0, 0.9) 50%,
+            rgba(30, 30, 30, 0.8) 75%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
+    }
+}
+
+/* Animaciones */
+@keyframes stadiumLights {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* WhatsApp button */
+.whatsapp-float {
+    @apply fixed bottom-5 right-5 bg-green-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50;
+}
+
+.whatsapp-float:hover {
+    @apply scale-110;
+}
