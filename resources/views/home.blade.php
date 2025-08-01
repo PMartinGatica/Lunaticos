@@ -12,7 +12,7 @@
                 <!-- Banner Image -->
                 <img src="{{ asset('images/banner.jpg') }}" 
                      alt="Lunáticos Indumentaria Deportiva" 
-                     class="w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-contain"
+                     class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover"
                      onerror="this.src='https://via.placeholder.com/1200x400/111111/ffffff?text=Lunáticos%20-%20Indumentaria%20Deportiva'">
             </div>
         </div>

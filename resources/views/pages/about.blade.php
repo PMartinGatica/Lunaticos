@@ -4,7 +4,7 @@
 @section('description', 'Conoce la historia de Lunáticos, nuestra pasión por el deporte y nuestro compromiso con la calidad en indumentaria deportiva.')
 
 @section('content')
-<div class="bg-white">
+<div class="bg-black">
     <!-- Hero Section -->
     <section class="stadium-bg py-20">
         <div class="container mx-auto px-4 text-center">
@@ -23,7 +23,7 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="font-heading text-3xl lg:text-4xl font-bold text-lunaticos-black mb-6">
+                    <h2 class="font-heading text-3xl lg:text-4xl font-bold text-lunaticos-white mb-6">
                         Todo Comenzó con una Pasión
                     </h2>
                     <div class="space-y-4 text-gray-600 text-lg">
@@ -59,10 +59,10 @@
     </section>
 
     <!-- Values Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-black">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-lunaticos-black mb-4">
+                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-lunaticos-white mb-4">
                     Nuestros Valores
                 </h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -151,10 +151,10 @@
     </section>
 
     <!-- Team Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-black">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-lunaticos-black mb-4">
+                <h2 class="font-heading text-3xl lg:text-4xl font-bold white-lunaticos-black mb-4">
                     Conocé al Equipo
                 </h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
