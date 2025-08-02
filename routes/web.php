@@ -26,9 +26,14 @@ Route::get('/tienda/{product:slug}', [ProductController::class, 'show'])->name('
 
 // Páginas institucionales
 Route::get('/nosotros', [PageController::class, 'about'])->name('about');
+Route::get('/testimonios', [PageController::class, 'testimonios'])->name('testimonios');
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 Route::get('/contacto', [PageController::class, 'contact'])->name('contact');
-Route::get('/legal', [PageController::class, 'legal'])->name('legal');
+
+// Páginas legales
+Route::get('/terminos-y-condiciones', [PageController::class, 'terminosCondiciones'])->name('terminos.condiciones');
+Route::get('/politica-privacidad', [PageController::class, 'politicaPrivacidad'])->name('politica.privacidad');
+Route::get('/terminos-servicio', [PageController::class, 'terminosServicio'])->name('terminos.servicio');
 
 // Carrito y Checkout
 Route::prefix('carrito')->name('cart.')->group(function () {

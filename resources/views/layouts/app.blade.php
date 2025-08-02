@@ -66,13 +66,13 @@
                     <a href="{{ route('about') }}" class="elegant-nav-link {{ request()->routeIs('about') ? 'text-gold-500' : 'text-white' }} hover:text-gold-300 transition-colors">
                         Nosotros
                     </a>
-                    <a href="{{ route('contact') }}" class="elegant-nav-link {{ request()->routeIs('contact') ? 'text-gold-500' : 'text-white' }} hover:text-gold-300 transition-colors">
-                        Contacto
+                    <a href="{{ route('testimonios') }}" class="elegant-nav-link {{ request()->routeIs('testimonios') ? 'text-gold-500' : 'text-white' }} hover:text-gold-300 transition-colors">
+                        Testimonios
                     </a>
                     <a href="{{ route('whatsapp') }}" class="elegant-button px-4 py-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 text-black font-semibold hover:from-gold-500 hover:to-gold-300 transition duration-300">
                         <span class="flex items-center">
                             <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.036 5.339c-3.635 0-6.591 2.956-6.593 6.589-.001 1.483.434 2.594 1.164 3.756l-.666 2.432 2.494-.654c1.117.663 2.184 1.061 3.595 1.061 3.632 0 6.591-2.956 6.592-6.59.003-3.641-2.942-6.593-6.586-6.594zm3.876 9.423c-.165.463-.957.885-1.337.942-.341.054-1.338.266-3.44-1.159-1.858-1.266-2.774-2.614-3.027-3.062-.249-.448-.535-1.188-.535-2.293 0-.693.262-1.354.73-1.828.293-.294.782-.641 1.154-.641.141 0 .231.014.328.043.294.103.575.55.786.852l.401.712c.25.437.49.848.081 1.211-.492.732-.358 1.082-.24 1.216.165.186 1.09 1.491 1.7 1.752.52.22 1.23.4 1.428.116.195-.28.351-.609.445-.829.36-.8.705-.503.934-.271.166.17.707.746.846.905s.216.368.131.548z" />
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
                             </svg>
                             WhatsApp
                         </span>
@@ -113,8 +113,8 @@
                     <a href="{{ route('faq') }}" class="py-2 px-3 text-white hover:text-gold-400 {{ request()->routeIs('faq') ? 'text-gold-500' : '' }} transition-colors">
                         FAQ
                     </a>
-                    <a href="{{ route('contact') }}" class="py-2 px-3 text-white hover:text-gold-400 {{ request()->routeIs('contact') ? 'text-gold-500' : '' }} transition-colors">
-                        Contacto
+                    <a href="{{ route('testimonios') }}" class="py-2 px-3 text-white hover:text-gold-400 {{ request()->routeIs('testimonios') ? 'text-gold-500' : '' }} transition-colors">
+                        Testimonios
                     </a>
                 </div>
             </div>
@@ -191,9 +191,9 @@
                     <div class="space-y-3">
                         <a href="{{ route('shop') }}" class="block text-gray-300 hover:text-lunaticos-green transition-colors">Tienda</a>
                         <a href="{{ route('about') }}" class="block text-gray-300 hover:text-lunaticos-green transition-colors">Nosotros</a>
+                        <a href="{{ route('testimonios') }}" class="block text-gray-300 hover:text-lunaticos-green transition-colors">Testimonios</a>
                         <a href="{{ route('faq') }}" class="block text-gray-300 hover:text-lunaticos-green transition-colors">FAQ</a>
-                        <a href="{{ route('contact') }}" class="block text-gray-300 hover:text-lunaticos-green transition-colors">Contacto</a>
-                        <a href="{{ route('legal') }}" class="block text-gray-300 hover:text-lunaticos-green transition-colors">Términos y Condiciones</a>
+                        <a href="{{ route('terminos.condiciones') }}" class="block text-gray-300 hover:text-lunaticos-green transition-colors">Términos y Condiciones</a>
                     </div>
                 </div>
             </div>
@@ -205,10 +205,10 @@
                         © {{ date('Y') }} Lunáticos. Todos los derechos reservados.
                     </p>
                     <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="{{ route('legal') }}" class="text-gray-400 hover:text-lunaticos-green text-sm transition-colors">
+                        <a href="{{ route('politica.privacidad') }}" class="text-gray-400 hover:text-lunaticos-green text-sm transition-colors">
                             Política de Privacidad
                         </a>
-                        <a href="{{ route('legal') }}" class="text-gray-400 hover:text-lunaticos-green text-sm transition-colors">
+                        <a href="{{ route('terminos.servicio') }}" class="text-gray-400 hover:text-lunaticos-green text-sm transition-colors">
                             Términos de Servicio
                         </a>
                     </div>

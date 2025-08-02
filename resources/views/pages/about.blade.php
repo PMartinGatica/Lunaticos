@@ -71,38 +71,38 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
-                    <div class="w-16 h-16 bg-lunaticos-red rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="text-center p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl border border-gray-800 hover:border-gold-500/50 transition-all duration-300 hover:scale-105 group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-red-500/30 transition-all duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-semibold text-lunaticos-black mb-4">Pasión</h3>
-                    <p class="text-gray-600">
+                    <h3 class="font-heading text-xl font-semibold text-white mb-4 group-hover:text-gold-400 transition-colors">Pasión</h3>
+                    <p class="text-gray-300 group-hover:text-gray-200 transition-colors">
                         Vivimos y respiramos deporte. Cada producto que elegimos refleja nuestro amor genuino por el juego.
                     </p>
                 </div>
 
-                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
-                    <div class="w-16 h-16 bg-lunaticos-green rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="text-center p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl border border-gray-800 hover:border-gold-500/50 transition-all duration-300 hover:scale-105 group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-green-500/30 transition-all duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-semibold text-lunaticos-black mb-4">Calidad</h3>
-                    <p class="text-gray-600">
+                    <h3 class="font-heading text-xl font-semibold text-white mb-4 group-hover:text-gold-400 transition-colors">Calidad</h3>
+                    <p class="text-gray-300 group-hover:text-gray-200 transition-colors">
                         No transigimos en calidad. Cada prenda debe superar nuestros estándares antes de llegar a vos.
                     </p>
                 </div>
 
-                <div class="text-center p-8 bg-white rounded-xl shadow-lg">
-                    <div class="w-16 h-16 bg-lunaticos-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                <div class="text-center p-8 bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl border border-gray-800 hover:border-gold-500/50 transition-all duration-300 hover:scale-105 group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-gold-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-gold-500/30 transition-all duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-semibold text-lunaticos-black mb-4">Comunidad</h3>
-                    <p class="text-gray-600">
+                    <h3 class="font-heading text-xl font-semibold text-white mb-4 group-hover:text-gold-400 transition-colors">Comunidad</h3>
+                    <p class="text-gray-300 group-hover:text-gray-200 transition-colors">
                         Creemos en el poder del deporte para unir personas. Somos parte de tu equipo, dentro y fuera de la cancha.
                     </p>
                 </div>
@@ -162,40 +162,80 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-32 h-32 rounded-full bg-gradient-to-r from-lunaticos-red to-lunaticos-green mx-auto mb-6 flex items-center justify-center">
-                        <span class="text-white font-heading text-4xl font-bold">MG</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center group">
+                    <div class="relative">
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-br from-gray-200 via-gray-100 to-gray-300 mx-auto mb-6 flex items-center justify-center shadow-2xl border-4 border-white group-hover:scale-105 transition-all duration-300">
+                            <span class="text-gray-800 font-heading text-5xl font-bold">AL</span>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gold-500 rounded-full flex items-center justify-center">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="font-heading text-xl font-semibold text-lunaticos-black mb-2">Martín González</h3>
-                    <p class="text-lunaticos-green font-medium mb-3">Fundador & CEO</p>
-                    <p class="text-gray-600">
-                        Ex jugador amateur con 15 años de experiencia en retail deportivo.
+                    <h3 class="font-heading text-2xl font-bold text-white mb-2">Alejandro Luna</h3>
+                    <p class="text-gold-400 font-semibold mb-3 text-lg">Papá & Fundador</p>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        El corazón de Lunáticos. Con su experiencia y amor por el deporte, 
+                        convirtió un sueño familiar en realidad.
                     </p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-32 h-32 rounded-full bg-gradient-to-r from-lunaticos-green to-lunaticos-gold mx-auto mb-6 flex items-center justify-center">
-                        <span class="text-white font-heading text-4xl font-bold">LC</span>
+                <div class="text-center group">
+                    <div class="relative">
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-br from-gold-300 via-gold-200 to-yellow-300 mx-auto mb-6 flex items-center justify-center shadow-2xl border-4 border-white group-hover:scale-105 transition-all duration-300">
+                            <span class="text-gray-800 font-heading text-5xl font-bold">AV</span>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-pink-500 rounded-full flex items-center justify-center">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="font-heading text-xl font-semibold text-lunaticos-black mb-2">Laura Castro</h3>
-                    <p class="text-lunaticos-green font-medium mb-3">Directora de Ventas</p>
-                    <p class="text-gray-600">
-                        Especialista en atención al cliente con pasión por el fútbol femenino.
+                    <h3 class="font-heading text-2xl font-bold text-white mb-2">Alejandra Villegas</h3>
+                    <p class="text-gold-400 font-semibold mb-3 text-lg">Mamá & Alma de la empresa</p>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        La fuerza que mantiene todo unido. Su calidez y dedicación 
+                        se sienten en cada detalle de nuestra atención.
                     </p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-32 h-32 rounded-full bg-gradient-to-r from-lunaticos-gold to-lunaticos-red mx-auto mb-6 flex items-center justify-center">
-                        <span class="text-white font-heading text-4xl font-bold">DR</span>
+                <div class="text-center group">
+                    <div class="relative">
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-br from-gray-400 via-gray-300 to-gray-500 mx-auto mb-6 flex items-center justify-center shadow-2xl border-4 border-white group-hover:scale-105 transition-all duration-300">
+                            <span class="text-white font-heading text-5xl font-bold">GL</span>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="font-heading text-xl font-semibold text-lunaticos-black mb-2">Diego Rodríguez</h3>
-                    <p class="text-lunaticos-green font-medium mb-3">Jefe de Logística</p>
-                    <p class="text-gray-600">
-                        Garantiza que tus productos lleguen en tiempo y forma a todo el país.
+                    <h3 class="font-heading text-2xl font-bold text-white mb-2">Gabriel Luna</h3>
+                    <p class="text-gold-400 font-semibold mb-3 text-lg">Hijo & Nueva generación</p>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Trae ideas frescas y energía joven. Representa el futuro 
+                        de Lunáticos sin perder la esencia familiar.
                     </p>
                 </div>
             </div>
+
+            <!-- Family Message -->
+            <!-- <div class="mt-16 text-center bg-gradient-to-r from-gray-900 to-black rounded-2xl p-8 border border-gray-800">
+                <h3 class="text-2xl font-bold text-gold-400 mb-4">Somos Familia, Como Vos</h3>
+                <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+                    No somos una gran corporación. Somos una familia de Ushuaia que ama el deporte 
+                    tanto como vos. Cada producto que elegimos, cada cliente que atendemos, 
+                    lo hacemos con el corazón. <span class="text-gold-400 font-semibold">Porque entendemos que detrás de cada camiseta 
+                    hay una historia, un sueño, una pasión.</span>
+                </p>
+                <div class="mt-6 flex justify-center">
+                    <div class="bg-gold-500 text-black px-6 py-2 rounded-full font-semibold">
+                        🏠 Familia Luna - Desde Ushuaia para todo el país
+                    </div>
+                </div>
+            </div> -->
         </div>
     </section>
 

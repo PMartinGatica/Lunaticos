@@ -49,9 +49,24 @@ class PageController extends Controller
         return view('pages.contact');
     }
 
-    public function legal()
+    public function terminosCondiciones()
     {
-        return view('pages.legal');
+        return view('pages.terminos-condiciones');
+    }
+
+    public function politicaPrivacidad()
+    {
+        return view('pages.politica-privacidad');
+    }
+
+    public function terminosServicio()
+    {
+        return view('pages.terminos-servicio');
+    }
+
+    public function testimonios()
+    {
+        return view('testimonios');
     }
 
     public function whatsapp(Product $product = null)
