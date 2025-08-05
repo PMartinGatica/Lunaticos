@@ -81,6 +81,13 @@
 
                 <!-- Cart & Mobile Menu -->
                 <div class="flex items-center space-x-4">
+                    <!-- User Button -->
+                    <button id="user-button" class="relative p-2 text-silver-400 hover:text-gold-400 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </button>
+
                     <!-- Cart Button -->
                     <button id="cart-button" class="relative p-2 text-silver-400 hover:text-gold-400 transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
