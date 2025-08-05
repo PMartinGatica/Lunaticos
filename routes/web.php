@@ -47,3 +47,6 @@ Route::prefix('carrito')->name('cart.')->group(function () {
 
 // WhatsApp integration
 Route::get('/whatsapp/{product?}', [PageController::class, 'whatsapp'])->name('whatsapp');
+
+// Incluir rutas de autenticación
+require __DIR__.'/auth.php';

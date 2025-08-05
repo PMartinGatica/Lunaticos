@@ -25,6 +25,9 @@
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
     @stack('styles')
 </head>
 <body class="antialiased bg-black text-gray-200 font-sans">
@@ -82,11 +85,46 @@
                 <!-- Cart & Mobile Menu -->
                 <div class="flex items-center space-x-4">
                     <!-- User Button -->
-                    <button id="user-button" class="relative p-2 text-silver-400 hover:text-gold-400 transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                        </svg>
-                    </button>
+                    @auth
+                        <!-- Usuario logueado - Dropdown -->
+                        <div class="relative" x-data="{ open: false }">
+                            <button @click="open = !open" class="flex items-center p-2 text-silver-400 hover:text-gold-400 transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div x-show="open" @click.away="open = false" 
+                                 class="absolute right-0 mt-2 w-48 bg-gray-900 border border-gray-700 rounded-lg shadow-lg z-50">
+                                <div class="py-1">
+                                    <div class="px-4 py-2 text-sm text-silver-300 border-b border-gray-700">
+                                        {{ Auth::user()->name }}
+                                        @if(Auth::user()->role === 'admin')
+                                            <span class="block text-xs text-gold-400">Administrador</span>
+                                        @endif
+                                    </div>
+                                    @if(Auth::user()->role === 'admin')
+                                        <a href="#" class="block px-4 py-2 text-sm text-silver-300 hover:bg-gray-800 hover:text-gold-400">
+                                            Panel Admin
+                                        </a>
+                                    @endif
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-silver-300 hover:bg-gray-800 hover:text-gold-400">
+                                            Cerrar Sesión
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    @else
+                        <!-- Usuario no logueado -->
+                        <a href="{{ route('login') }}" class="relative p-2 text-silver-400 hover:text-gold-400 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                        </a>
+                    @endauth
 
                     <!-- Cart Button -->
                     <button id="cart-button" class="relative p-2 text-silver-400 hover:text-gold-400 transition-colors">
