@@ -10,23 +10,25 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Productos destacados
+        // Productos destacados (que tengan stock y estén activos)
         $featuredProducts = Product::with('category')
-            ->active()
-            ->featured()
+            ->where('stock', '>', 0)
+            ->where('status', 'active')
+            ->latest()
             ->limit(8)
             ->get();
 
         // Productos más recientes
         $newProducts = Product::with('category')
-            ->active()
+            ->where('stock', '>', 0)
+            ->where('status', 'active')
             ->latest()
             ->limit(4)
             ->get();
 
         // Categorías principales
-        $categories = Category::active()
-            ->orderBy('sort_order')
+        $categories = Category::where('is_active', true)
+            ->latest()
             ->limit(6)
             ->get();
 
