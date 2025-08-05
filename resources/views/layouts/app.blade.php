@@ -104,7 +104,7 @@
                                         @endif
                                     </div>
                                     @if(Auth::user()->role === 'admin')
-                                        <a href="#" class="block px-4 py-2 text-sm text-silver-300 hover:bg-gray-800 hover:text-gold-400">
+                                        <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 text-sm text-silver-300 hover:bg-gray-800 hover:text-gold-400">
                                             Panel Admin
                                         </a>
                                     @endif

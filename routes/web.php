@@ -50,3 +50,6 @@ Route::get('/whatsapp/{product?}', [PageController::class, 'whatsapp'])->name('w
 
 // Incluir rutas de autenticación
 require __DIR__.'/auth.php';
+
+// Incluir rutas de administración
+require __DIR__.'/admin.php';
