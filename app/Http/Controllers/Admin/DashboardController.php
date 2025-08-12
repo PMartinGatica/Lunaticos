@@ -17,15 +17,18 @@ class DashboardController extends Controller
         $totalProducts = Product::count();
         $totalCategories = Category::count();
         $totalUsers = User::where('role', 'user')->count();
-        $lowStockProducts = Product::where('stock', '<=', 5)->count();
+        $lowStockProducts = Product::where('stock_quantity', '<=', 5)
+            ->where('manage_stock', true)
+            ->count();
         
         // Productos más recientes
-        $recentProducts = Product::with('category')->latest()->limit(5)->get();
+        $recentProducts = Product::with('categories')->latest()->limit(5)->get();
         
         // Productos con stock bajo
-        $lowStockList = Product::with('category')
-            ->where('stock', '<=', 5)
-            ->orderBy('stock', 'asc')
+        $lowStockList = Product::with('categories')
+            ->where('stock_quantity', '<=', 5)
+            ->where('manage_stock', true)
+            ->orderBy('stock_quantity', 'asc')
             ->limit(5)
             ->get();
 

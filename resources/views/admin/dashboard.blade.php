@@ -89,7 +89,7 @@
                     @endforeach
                 </div>
                 <div class="mt-4">
-                    <a href="{{ route('admin.products') }}" class="text-gold-400 hover:text-gold-300 text-sm">Ver todos los productos →</a>
+                    <a href="{{ route('admin.products.index') }}" class="text-gold-400 hover:text-gold-300 text-sm">Ver todos los productos →</a>
                 </div>
             @else
                 <p class="text-gray-400">No hay productos aún.</p>
@@ -120,7 +120,7 @@
                     @endforeach
                 </div>
                 <div class="mt-4">
-                    <a href="{{ route('admin.products') }}?filter=low_stock" class="text-red-400 hover:text-red-300 text-sm">Ver productos con stock bajo →</a>
+                    <a href="{{ route('admin.products.index') }}?filter=low_stock" class="text-red-400 hover:text-red-300 text-sm">Ver productos con stock bajo →</a>
                 </div>
             @else
                 <p class="text-gray-400">¡Todos los productos tienen stock suficiente!</p>
@@ -133,7 +133,7 @@
 <div class="mt-8">
     <h3 class="text-lg font-semibold text-white mb-4">Acciones Rápidas</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="{{ route('admin.products') }}" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-black font-semibold py-3 px-6 rounded-lg transition duration-300 text-center">
+        <a href="{{ route('admin.products.index') }}" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-black font-semibold py-3 px-6 rounded-lg transition duration-300 text-center">
             Gestionar Productos
         </a>
         <a href="{{ route('admin.customers') }}" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 text-center">

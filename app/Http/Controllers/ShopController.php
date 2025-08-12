@@ -10,11 +10,11 @@ class ShopController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Product::with('category')->active();
+        $query = Product::with('categories')->active();
 
         // Filtrar por categoría
         if ($request->has('category') && $request->category != '') {
-            $query->whereHas('category', function($q) use ($request) {
+            $query->whereHas('categories', function($q) use ($request) {
                 $q->where('slug', $request->category);
             });
         }
@@ -53,7 +53,15 @@ class ShopController extends Controller
         }
 
         $products = $query->paginate(12);
-        $categories = Category::active()->orderBy('sort_order')->get();
+        
+        // Obtener categorías de forma más directa para evitar problemas de eager loading
+        try {
+            $categories = \App\Models\Category::where('is_active', true)->orderBy('sort_order')->get();
+        } catch (\Exception $e) {
+            // Si hay error, usar colección vacía
+            $categories = collect([]);
+            \Log::error('Error al cargar categorías: ' . $e->getMessage());
+        }
 
         return view('shop.index', compact('products', 'categories'));
     }

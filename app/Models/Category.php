@@ -16,7 +16,8 @@ class Category extends Model
         'description',
         'image',
         'is_active',
-        'sort_order'
+        'sort_order',
+        'parent_id'
     ];
 
     protected $casts = [
@@ -25,7 +26,17 @@ class Category extends Model
 
     public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsToMany(Product::class, 'product_categories');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Category::class, 'parent_id');
     }
 
     public function setNameAttribute($value)

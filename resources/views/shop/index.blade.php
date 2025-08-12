@@ -197,7 +197,7 @@
                             
                             <div class="p-4">
                                 <div class="text-xs text-gold-400 font-medium mb-2">
-                                    {{ $product->category->name ?? 'Sin categoría' }}
+                                    {{ $product->categories->first()->name ?? 'Sin categoría' }}
                                 </div>
                                 <h3 class="text-sm text-silver-300 line-clamp-2 mb-3 group-hover:text-white transition-colors">
                                     {{ $product->name }}

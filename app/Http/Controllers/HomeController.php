@@ -10,18 +10,19 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Productos destacados (que tengan stock y estén activos)
-        $featuredProducts = Product::with('category')
-            ->where('stock', '>', 0)
-            ->where('status', 'active')
+        // Productos destacados (que tengan stock y estén publicados)
+        $featuredProducts = Product::with('categories')
+            ->where('stock_status', 'instock')
+            ->where('status', 'published')
+            ->where('is_featured', true)
             ->latest()
             ->limit(8)
             ->get();
 
         // Productos más recientes
-        $newProducts = Product::with('category')
-            ->where('stock', '>', 0)
-            ->where('status', 'active')
+        $newProducts = Product::with('categories')
+            ->where('stock_status', 'instock')
+            ->where('status', 'published')
             ->latest()
             ->limit(4)
             ->get();

@@ -11,48 +11,170 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
+        // Campos básicos
+        'type',
+        'sku',
         'name',
         'slug',
-        'description',
-        'short_description',
-        'price',
-        'sale_price',
-        'sizes',
-        'colors',
-        'images',
-        'stock',
-        'is_active',
+        
+        // Estado y visibilidad
+        'status',
         'is_featured',
-        'sku',
-        'category_id',
+        'catalog_visibility',
+        
+        // Descripciones
+        'short_description',
+        'description',
+        
+        // Precios
+        'regular_price',
+        'sale_price',
+        'sale_price_start',
+        'sale_price_end',
+        
+        // Impuestos
+        'tax_status',
+        'tax_class',
+        
+        // Inventario
+        'manage_stock',
+        'stock_quantity',
+        'stock_status',
+        'low_stock_threshold',
+        'backorders',
+        'sold_individually',
+        
+        // Dimensiones
+        'weight',
+        'length',
+        'width',
+        'height',
+        
+        // Configuraciones
+        'reviews_allowed',
+        'purchase_note',
+        
+        // Relaciones
+        'parent_id',
+        'upsell_ids',
+        'cross_sell_ids',
+        'grouped_product_ids',
+        
+        // Externos
+        'external_url',
+        'button_text',
+        
+        // Descargables
+        'is_downloadable',
+        'download_limit',
+        'download_expiry',
+        
+        // Envío
+        'shipping_class',
+        
+        // Orden
+        'menu_order',
+        
+        // Metadatos
         'meta_data'
     ];
 
     protected $casts = [
-        'sizes' => 'array',
-        'colors' => 'array',
-        'images' => 'array',
-        'meta_data' => 'array',
-        'is_active' => 'boolean',
         'is_featured' => 'boolean',
-        'price' => 'decimal:2',
+        'manage_stock' => 'boolean',
+        'sold_individually' => 'boolean',
+        'reviews_allowed' => 'boolean',
+        'is_downloadable' => 'boolean',
+        'regular_price' => 'decimal:2',
         'sale_price' => 'decimal:2',
+        'weight' => 'decimal:3',
+        'length' => 'decimal:2',
+        'width' => 'decimal:2',
+        'height' => 'decimal:2',
+        'sale_price_start' => 'datetime',
+        'sale_price_end' => 'datetime',
+        'upsell_ids' => 'json',
+        'cross_sell_ids' => 'json',
+        'grouped_product_ids' => 'json',
+        'meta_data' => 'json',
     ];
 
+    // Relaciones
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'product_categories');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'product_tags');
+    }
+
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
+
+    public function featuredImage()
+    {
+        return $this->hasOne(ProductImage::class)->where('is_featured', true);
+    }
+
+    public function downloads()
+    {
+        return $this->hasMany(ProductDownload::class);
+    }
+
+    public function attributes()
+    {
+        return $this->hasMany(ProductAttribute::class);
+    }
+
+    public function variationAttributes()
+    {
+        return $this->hasMany(ProductVariationAttribute::class);
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Product::class, 'parent_id');
+    }
+
+    public function variations()
+    {
+        return $this->hasMany(Product::class, 'parent_id')->where('type', 'variation');
+    }
+
+    public function inventoryMovements()
+    {
+        return $this->hasMany(InventoryMovement::class);
+    }
+
+    // Métodos auxiliares para compatibilidad con código anterior
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->categories()->first();
     }
 
-    public function setNameAttribute($value)
+    public function getCategoryAttribute()
     {
-        $this->attributes['name'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
+        return $this->categories()->first();
     }
 
-    public function scopeActive($query)
+    public function getStockAttribute()
     {
-        return $query->where('is_active', true);
+        return $this->stock_quantity;
+    }
+
+    public function getPriceAttribute()
+    {
+        return $this->regular_price;
+    }
+
+    // Scopes
+    public function scopePublished($query)
+    {
+        return $query->where('status', 'published');
     }
 
     public function scopeFeatured($query)
@@ -60,32 +182,103 @@ class Product extends Model
         return $query->where('is_featured', true);
     }
 
+    public function scopeInStock($query)
+    {
+        return $query->where('stock_status', 'instock');
+    }
+
+    public function scopeVariable($query)
+    {
+        return $query->where('type', 'variable');
+    }
+
+    public function scopeSimple($query)
+    {
+        return $query->where('type', 'simple');
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'published');
+    }
+
+    // Métodos auxiliares
+    public function getCurrentPrice()
+    {
+        if ($this->sale_price && $this->isOnSale()) {
+            return $this->sale_price;
+        }
+        return $this->regular_price;
+    }
+
+    public function isOnSale()
+    {
+        if (!$this->sale_price) {
+            return false;
+        }
+
+        $now = now();
+        
+        if ($this->sale_price_start && $now < $this->sale_price_start) {
+            return false;
+        }
+        
+        if ($this->sale_price_end && $now > $this->sale_price_end) {
+            return false;
+        }
+        
+        return true;
+    }
+
+    public function isInStock()
+    {
+        return $this->stock_status === 'instock';
+    }
+
+    public function isVariable()
+    {
+        return $this->type === 'variable';
+    }
+
+    public function isVariation()
+    {
+        return $this->type === 'variation';
+    }
+
+    public function hasStock()
+    {
+        if (!$this->manage_stock) {
+            return true;
+        }
+        
+        return $this->stock_quantity > 0;
+    }
+
+    public function canBackorder()
+    {
+        return in_array($this->backorders, ['yes', 'notify']);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';
     }
 
-    public function getMainImageAttribute()
+    // Eventos del modelo
+    protected static function boot()
     {
-        return $this->images[0] ?? '/images/placeholder-product.jpg';
-    }
+        parent::boot();
 
-    public function getCurrentPriceAttribute()
-    {
-        return $this->sale_price ?? $this->price;
-    }
+        static::creating(function ($product) {
+            if (empty($product->slug)) {
+                $product->slug = Str::slug($product->name);
+            }
+        });
 
-    public function getDiscountPercentageAttribute()
-    {
-        if (!$this->sale_price) {
-            return 0;
-        }
-        
-        return round((($this->price - $this->sale_price) / $this->price) * 100);
-    }
-
-    public function isInStock()
-    {
-        return $this->stock > 0;
+        static::updating(function ($product) {
+            if ($product->isDirty('name') && empty($product->slug)) {
+                $product->slug = Str::slug($product->name);
+            }
+        });
     }
 }

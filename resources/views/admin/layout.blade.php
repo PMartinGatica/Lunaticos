@@ -31,11 +31,18 @@
                     Dashboard
                 </a>
                 
-                <a href="{{ route('admin.products') }}" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-gold-400 {{ request()->routeIs('admin.products*') ? 'bg-gray-800 text-gold-400' : '' }}">
+                <a href="{{ route('admin.products.index') }}" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-gold-400 {{ request()->routeIs('admin.products*') ? 'bg-gray-800 text-gold-400' : '' }}">
                     <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5zM6 9a1 1 0 112 0 1 1 0 01-2 0zm6 0a1 1 0 112 0 1 1 0 01-2 0z" clip-rule="evenodd" />
                     </svg>
                     Productos
+                </a>
+                
+                <a href="{{ route('admin.import.index') }}" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-gold-400 {{ request()->routeIs('admin.import*') ? 'bg-gray-800 text-gold-400' : '' }}">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    Importar CSV
                 </a>
                 
                 <a href="{{ route('admin.orders') }}" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-gold-400 {{ request()->routeIs('admin.orders*') ? 'bg-gray-800 text-gold-400' : '' }}">

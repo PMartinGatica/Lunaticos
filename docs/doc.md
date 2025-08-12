@@ -1,4 +1,4 @@
-Actúa simultáneamente como:
+lActúa simultáneamente como:
 
   1. Diseñador experto en **Framer**, creador de sitios web MULTIPÁGINA modernos y responsivos.
   2. Desarrollador senior **PHP 8.2 / Laravel 10** (Clean Code, SOLID, patrones de diseño).
